@@ -1,32 +1,57 @@
-import _ from "lodash";
 import mqtt from "mqtt";
-
+let temp = 21;
 const client = mqtt.connect("wss://m2.wqtt.ru", {
   port: 5038,
   username: "test",
   password: "test",
 });
 
-client.on("connect", function () {
-  console.log("Connected");
-  console.log(client.connected);
-  // client.subscribe("rc117/tv", function (err) {
-  //   if (!err) {
-  //     client.publish("rc117/tv", "0");
-  //   }
-  // });
-  // client.subscribe("rc117/cond", function (err) {
-  //   if (!err) {
-  //     client.publish("rc117/cond", "off");
-  //   }
-  // });
-  client.subscribe("tvon", function (err) {
+document.getElementById("current-temp").innerHTML = temp;
+
+function reconnect() {
+  if (!client.connected) {
+    console.log(`Reconnecting..., ${client.connected}`);
+    client.reconnect();
+  }
+}
+setInterval(reconnect, 1000);
+
+// function readMessage() {
+//   client.on("message", function (topic, message) {
+//     console.log(message.toString(), topic.toString());
+//   });
+// }
+// readMessage();
+
+function btnHandler(topic, arg) {
+  client.subscribe(topic, function (err) {
     if (!err) {
-      client.publish("rc/test", "ABOBA");
+      client.publish(topic, arg);
     }
   });
+}
+
+document.getElementById("cond-on").addEventListener("click", () => {
+  btnHandler("rc117/cond", "on");
 });
 
-client.on("message", function (topic, message) {
-  console.log(message.toString(), topic.toString());
+document.getElementById("cond-off").addEventListener("click", () => {
+  btnHandler("rc117/cond", "off");
 });
+
+// document.getElementById("cond-temp-minus").addEventListener("click", () => {
+//   if (temp > 16) {
+//     temp--;
+//   }
+//   btnHandler("rc117/cond/temp", temp.toString());
+//   document.getElementById("current-temp").innerHTML = temp;
+// });
+
+// document.getElementById("cond-temp-plus").addEventListener("click", () => {
+//   if (temp < 30) {
+//     temp++;
+//   }
+//   btnHandler("rc117/cond/temp", temp.toString());
+//   document.getElementById("current-temp").innerHTML = temp;
+// });
+// rc117/cond/temp      16

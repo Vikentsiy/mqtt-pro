@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Getting Started</title>
-    <script src="main.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mqtt</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./main.js" defer></script>
   </head>
+
   <body>
-    <h1>ABOBA</h1>
+    <header>
+      <h1 class="title">Кабинет 216</h1>
+      <div class="equipment-box">
+        <div class="cond">
+          <button id="cond-on">
+            <img src="./img/Frame 2.svg" alt="" />
+          </button>
+          <button id="cond-off">
+            <img src="./img/Frame 2.svg" alt="" />
+          </button>
+          <img src="./img/Group 1.svg" alt="" />
+          <p>Кондиционер</p>
+        </div>
+        <div class="tv">
+          <p>Телевизор</p>
+          <img src="./img/Group 67.svg" alt="" />
+          <button class="power-tv">
+            <img src="./img/Frame 2.svg" alt="" />
+          </button>
+          <button class="power-tv">
+            <img src="./img/Frame 2.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="temp" id="current-temp"></div>
+      <div class="working-mod">
+        <h2>Режим работы</h2>
+        <div class="working-mod-box">
+          <button class="working-mod-btn">Охлаждение</button>
+          <button class="working-mod-btn">Подогрев</button>
+          <button class="working-mod-btn">Вентилятор</button>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
