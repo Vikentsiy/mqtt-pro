@@ -16,41 +16,84 @@
   </head>
 
   <body>
+    <div class="temp-info">
+      <h3>Температура</h3>
+      <div class="temp-info-box">
+        <div class="temp-info-title">
+          <p id="inside-temp"></p>
+          <p class="inside-title">Внутри</p>
+        </div>
+        <div class="temp-info-title">
+          <p id="outside-temp"></p>
+          <p class="outside-title">Снаружи</p>
+        </div>
+      </div>
+    </div>
     <header>
       <h1 class="title">Кабинет 216</h1>
       <div class="equipment-box">
         <div class="cond">
-          <button id="cond-on">
-            <img src="./img/Frame 2.svg" alt="" />
-          </button>
-          <button id="cond-off">
-            <img src="./img/Frame 2.svg" alt="" />
-          </button>
+          <button id="cond-on">On</button>
+          <button id="cond-off">Off</button>
           <img src="./img/Group 1.svg" alt="" />
           <p>Кондиционер</p>
         </div>
         <div class="tv">
           <p>Телевизор</p>
           <img src="./img/Group 67.svg" alt="" />
-          <button class="power-tv">
-            <img src="./img/Frame 2.svg" alt="" />
-          </button>
-          <button class="power-tv">
-            <img src="./img/Frame 2.svg" alt="" />
-          </button>
+          <button id="tv-off">Off</button>
+          <button id="tv-on">On</button>
         </div>
       </div>
     </header>
     <main>
-      <div id="current-temp"></div>
+      <h2 id="current-temp"></h2>
       <div class="working-mod">
         <h2>Режим работы</h2>
         <div class="working-mod-box">
-          <button class="working-mod-btn">Охлаждение</button>
-          <button class="working-mod-btn">Подогрев</button>
-          <button class="working-mod-btn">Вентилятор</button>
+          <button id="mode-cooling">
+            <p>Охлаждение</p>
+            <img src="./img/cold-svgrepo-com.svg" alt="" />
+          </button>
+          <button id="mode-heating">
+            <p>Подогрев</p>
+            <img src="./img/radiator-heat-svgrepo-com.svg" alt="" />
+          </button>
+          <button id="mode-ventilator">
+            <p>Вентилятор</p>
+            <img src="./img/ventilating-fan-svgrepo-com.svg" alt="" />
+          </button>
+          <button id="mode-auto">
+            <p>Авто</p>
+            <img src="./img/cold-svgrepo-com.svg" alt="" />
+            <img src="./img/radiator-heat-svgrepo-com.svg" alt="" />
+            <img src="./img/ventilating-fan-svgrepo-com.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="settings">
+        <div class="settings-temp">
+          <p>Температура °C</p>
+          <div class="settings-temp-btn">
+            <button id="cond-temp-minus">
+              <img src="./img/Vector 6.svg" alt="" />
+            </button>
+            <button id="cond-temp-plus">
+              <img src="./img/Vector 7.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="settings-speed">
+          <p>Скорость</p>
+          <div class="settings-speed-btn">
+            <button id="first-speed">1</button>
+            <button id="second-speed">2</button>
+            <button id="thirt-speed">3</button>
+            <button id="auto-speed">A</button>
+          </div>
         </div>
       </div>
     </main>
   </body>
+  <!-- made by Daniil Zenkevich, Bogdan Berdnikov, Vikentsiy Davidovich  -->
 </html>
