@@ -16,7 +16,7 @@ const client = mqtt.connect("wss://m2.wqtt.ru", {
 
 document.getElementById("inside-temp").innerHTML = "Loading...";
 document.getElementById("outside-temp").innerHTML = "Loading...";
-document.getElementById("current-temp").innerHTML = temp;
+document.getElementById("current-temp").innerHTML = `${temp}°C`;
 
 async function getWeather() {
   const response = await fetch(url);
@@ -89,7 +89,7 @@ document.getElementById("cond-temp-minus").addEventListener("click", () => {
     temp--;
   }
   btnHandler(condTempTopic, temp.toString());
-  document.getElementById("current-temp").innerHTML = temp;
+  document.getElementById("current-temp").innerHTML = `${temp}°C`;
 });
 
 document.getElementById("cond-temp-plus").addEventListener("click", () => {
@@ -97,7 +97,7 @@ document.getElementById("cond-temp-plus").addEventListener("click", () => {
     temp++;
   }
   btnHandler(condTempTopic, temp.toString());
-  document.getElementById("current-temp").innerHTML = temp;
+  document.getElementById("current-temp").innerHTML = `${temp}°C`;
 });
 // // режим охлаждения
 // document.getElementById("mode-cooling").addEventListener("click", () => {
