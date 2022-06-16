@@ -76,6 +76,14 @@ document.getElementById("cond-off").addEventListener("click", () => {
   btnHandler(condTopic, "off");
 });
 
+document.getElementById("tv-off").addEventListener("click", () => {
+  btnHandler(tvTopic, "off");
+});
+
+document.getElementById("tv-on").addEventListener("click", () => {
+  btnHandler(tvTopic, "on");
+});
+
 document.getElementById("cond-temp-minus").addEventListener("click", () => {
   if (temp > 16) {
     temp--;
